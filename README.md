@@ -59,5 +59,3 @@ Associations:
 > [Sequelize Associations: One-to-Many Relationship example](https://bezkoder.com/sequelize-associate-one-to-many/)
 
 > [Sequelize Associations: Many-to-Many Relationship example](https://bezkoder.com/sequelize-associate-many-to-many/)
-
-# https://velog.io/@ktseo41/TIW-1%EC%9B%94-26%EC%9D%BC-docker-mysql-%ED%95%9C%EA%B8%80-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C-docker-compose-secret-%EC%9D%B4%EC%9A%A9-%EB%93%B1-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9E%91%EC%84%B1

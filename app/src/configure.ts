@@ -12,6 +12,7 @@ import morganMiddleware from "./utils/logger/morganMiddleware";
 import HttpException from "./utils/exceptions";
 import {} from "../global";
 import gplTypeDefs from "./interface/gql/schema";
+import Resolvers from "./controller/gql/index";
 
 try {
   dotenv.config({
@@ -45,8 +46,9 @@ type Cors = {
 const corsOptions: Cors = {
   credentials: true,
   origin: [
-    "https://localhost:3000",
-    "https://localhost:3008",
+    "http://localhost:3000",
+    "http://localhost:3002",
+    "http://localhost:3008",
     "https://studio.apollographql.com",
   ],
 };
@@ -59,6 +61,7 @@ const options = {
 const authenticationMethod = (token: any) => {
   return { user: "apollo" };
 };
+
 const apolloServer = new ApolloServer({
   // playground: true,
 
@@ -80,36 +83,7 @@ const apolloServer = new ApolloServer({
   //   return context;
   // },
   typeDefs: gplTypeDefs,
-  resolvers: {
-    Query: {
-      queryBBS: async (parent: any, args: any, context: any) => {
-        return {
-          title: "my title",
-          body: "my body",
-        };
-      },
-    },
-    Mutation: {
-      setMessage: (message) => {
-        // sandbox:
-        // mutation {
-        //   setMessage(message:"abcd")
-        // }
-        return "0000";
-      },
-      createBBS: (_, { payload }, { dataSources }) => {
-        console.log("new post", payload, dataSources);
-        return true;
-      },
-      mutationExample: () => {
-        console.log("Perform mutation here before responding.");
-
-        return {
-          message: "This is the message from the mutation resolver.",
-        };
-      },
-    },
-  },
+  resolvers: Resolvers,
 });
 
 app.use(cors(corsOptions));

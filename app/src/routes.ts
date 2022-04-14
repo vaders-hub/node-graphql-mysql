@@ -11,11 +11,11 @@ const routes = (app: Application): void => {
       "Access-Control-Allow-Headers",
       "x-access-token, Origin, Content-Type, Accept"
     );
-    next(); // http://expressjs.com/guide.html#passing-route control
+    next();
   });
   router.get("/", indexRouter);
-  app.use("/bbs", bbsRouter);
-  app.use("/members", membersRouter);
+  app.use("/api/bbs", bbsRouter);
+  app.use("/api/members", membersRouter);
   app.use(router);
 };
 

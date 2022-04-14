@@ -4,7 +4,7 @@ import { authJwt } from "../middleware/";
 
 const router = express.Router();
 
-router.use(authJwt.verifyToken);
+// router.use(authJwt.verifyToken);
 
 router.get("/read", async (req: Request, res: Response): Promise<any> => {
   const queryString = `SELECT * FROM mybbs`;

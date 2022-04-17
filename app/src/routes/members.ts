@@ -52,7 +52,7 @@ router.post("/signup", async (req: Request, res: Response): Promise<any> => {
 
     const rows: any = result as RowDataPacket[];
     if (rows.serverStatus === 2) {
-      res.json({ message: "가입 성공" });
+      res.json({ code: "0000", message: "successfully joined" });
     }
   });
 });

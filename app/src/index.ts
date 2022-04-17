@@ -12,11 +12,14 @@ connection.connect(function (err) {
 
 const initServer = async () => {
   await apolloServer.start();
-  apolloServer.applyMiddleware({ app, path: "/api/graphql" });
+  apolloServer.applyMiddleware({ app, path: "/graphql" });
 
   const httpsServer = https.createServer(options, app);
   httpsServer.listen(PORT, (): void => {
     console.log(`Server Running here 👉 https://localhost:${PORT}`);
+  });
+  app.listen(4002, () => {
+    console.log(`Server Running here 👉 http://localhost:${PORT}`);
   });
 };
 

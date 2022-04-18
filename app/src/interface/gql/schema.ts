@@ -1,11 +1,18 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
-  type BBS {
+  type Thread {
     title: String
     body: String
   }
-
+  type Res {
+    code: String
+    data: [Thread]
+  }
+  type BBS {
+    code: String
+    data: [Thread]
+  }
   type Example {
     message: String
   }

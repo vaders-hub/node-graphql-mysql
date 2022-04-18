@@ -52,7 +52,7 @@ router.post("/signup", async (req: Request, res: Response): Promise<any> => {
 
     const rows: any = result as RowDataPacket[];
     if (rows.serverStatus === 2) {
-      res.json({ code: "0000", message: "successfully joined" });
+      res.json({ code: "1111", message: "join success" });
     }
   });
 });
@@ -73,7 +73,7 @@ router.post("/signin", async (req: Request, res: Response): Promise<any> => {
         console.log("not found", memid);
         // throw new Api404Error(`User with id: ${memid}`);
         res.cookie("accessToken", "null");
-        res.json({ body: "해당 아이디 없음" });
+        res.json({ code: "0000", body: "login info mismatched" });
       }
       if (rows[0]) {
         const { member_id, member_pw, salt } = rows[0];
@@ -114,11 +114,11 @@ router.post("/signin", async (req: Request, res: Response): Promise<any> => {
             if (rows.serverStatus === 2) {
               res.cookie("accessToken", accessToken, cookieCoption);
               res.cookie("refreshToken", refreshToken, cookieCoption);
-              res.json({ message: "로그인 성공" });
+              res.json({ code: "1111", message: "login success" });
             }
           });
         } else {
-          res.json({ message: "로그인 실퍠" });
+          res.json({ code: "0000", message: "login failed" });
         }
       }
     });

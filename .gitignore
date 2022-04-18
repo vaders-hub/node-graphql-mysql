@@ -6,3 +6,14 @@ app/node_modules
 # data
 temp
 
+*.dblwr
+data/db/#innodb_temp
+data/db/binlog.000069
+data/db/binlog.000070
+data/db/binlog.index
+data/db/ib_logfile0
+data/db/ibdata1
+data/db/ibtmp1
+data/db/mysql.ibd
+data/db/undo_001
+data/db/undo_002

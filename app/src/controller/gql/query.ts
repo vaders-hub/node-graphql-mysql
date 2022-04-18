@@ -9,7 +9,7 @@ export default {
       const result = await queryResult(queryString);
       return { code: "1111", data: result };
     } catch (e) {
-      console.log(e);
+      console.warn(e);
     }
   },
 };

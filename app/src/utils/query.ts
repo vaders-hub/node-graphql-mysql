@@ -8,8 +8,7 @@ const queryResult = (query: string) => {
         reject(error);
       }
 
-      // const rows = <RowDataPacket[]>result;
-      const rows = JSON.parse(JSON.stringify(result));
+      const rows = <RowDataPacket[]>result;
       resolve(rows);
     });
   });

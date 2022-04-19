@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["es2015", "es2016", "es2017", "esnext", "dom"],
+    "lib": ["esnext", "dom"],
     "module": "esnext",
-    "rootDir": ".",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "resolveJsonModule": true,
     "allowJs": true,
-    "baseUrl": "./src",
+    "paths": {
+      "@/controller/*": ["./src/controller/*"]
+    },
     "outDir": "./dist",
     // "noEmit": true,
     "isolatedModules": true,

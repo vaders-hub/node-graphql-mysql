@@ -6,7 +6,7 @@ export default {
     parent: Record<string, unknown>,
     args: Record<string, unknown>
   ) => {
-    console.log("new post", parent, args);
-    return true;
+    console.log("new post", args);
+    return { code: "0000" };
   },
 };

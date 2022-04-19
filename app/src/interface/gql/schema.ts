@@ -21,14 +21,19 @@ const typeDefs = gql`
     queryBBS: BBS
   }
 
+  type BBSResult {
+    code: String
+  }
+
   input BBSData {
+    member_id: String
     title: String
     body: String
   }
 
   type Mutation {
     setMessage(message: String): String
-    createBBS(payload: BBSData): Boolean
+    createBBS(payload: BBSData): BBSResult
     mutationExample: Example
   }
 `;

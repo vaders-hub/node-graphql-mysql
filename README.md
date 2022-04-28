@@ -3,16 +3,20 @@
 Dockerizable Node app with Mysql and GraphQL server
 This repo is the end-point of rest api to "next-react-ts" repo
 
-## Technologies Used
+### Technologies Used
 
-Node, Express
-Mysql, GraphQL
-Typescript
-Jest
-Docker
-Socket
+1. Node, Express
+2. Mysql, GraphQL
+3. Typescript
+4. Jest
+5. Docker
+6. Socket
 
-#### app
+### Contributors
+
+Hyunbae Jeon 95%
+
+### Running app
 
 RUN
 
@@ -23,8 +27,6 @@ Test
 
 1.  npm run test
 
-Docker
+### Build Docker Image
 
 1. docker-compose up --build
-
-

@@ -33,6 +33,23 @@ const dec = async (req: Request, res: Response): Promise<any> => {
   }
 };
 
+const findUser = async (req: Request, res: Response): Promise<any> =>  {
+  const { memid } = req.query;
+  const queryStringSearch = `SELECT * from mymembers where member_id = "${memid}"`;
+  try {
+    const result = await queryResult(queryStringSearch);
+    
+    if (result.length > 0) {
+      res.json({ code: "0000", data:result[0].member_id });
+    } else {
+      res.json({ code: "0000", data:result });
+    }
+    
+  } catch (e) {
+    console.warn(e);
+  }
+}
+
 const signup = async (req: Request, res: Response): Promise<any> => {
   const { memid, mempw } = req.body;
   const { salt, hashed } = await encrypt.procEncryption(mempw);
@@ -117,4 +134,4 @@ const signin = async (req: Request, res: Response): Promise<any> => {
   }
 };
 
-export { listMember, enc, dec, signup, signin };
+export { listMember, enc, dec, findUser, signup, signin };

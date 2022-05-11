@@ -19,7 +19,7 @@ const initServer = async () => {
     console.log(`Server Running here 👉 https://localhost:${PORT}`);
   });
   app.listen(4002, () => {
-    console.log(`Server Running here 👉 http://localhost:${PORT}`);
+    console.log(`Server Running here 👉 http://localhost:4002`);
   });
 };
 
